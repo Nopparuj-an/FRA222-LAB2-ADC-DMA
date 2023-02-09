@@ -127,13 +127,12 @@ int main(void) {
 			VOLTAGE /= 10.0;
 
 			// convert data
-			TEMP = 25.0 + ((TEMP * 3.3 / 4096.0) - 0.76) / 0.0025;
-			intPrintln(VOLTAGE);
-			VOLTAGE = (VOLTAGE / (4096.0 * (3.3 / 5.0))) * 5000.0;
+			TEMP = 273 + 25.0 + ((TEMP * 3.3 / 4095.0) - 0.76) / 0.0025;
+			VOLTAGE = (VOLTAGE / (4095.0 * (2.5 / 3.3))) * 5000.0;
 
 			// debug print
-//			intPrintln(TEMP);
-//			intPrintln(VOLTAGE);
+			intPrintln(TEMP);
+			intPrintln(VOLTAGE);
 
 		}
 		/* USER CODE END WHILE */
